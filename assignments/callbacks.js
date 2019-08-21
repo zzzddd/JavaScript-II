@@ -41,25 +41,56 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr);
+}
+console.log(getLength(items,len));
+//
+function len(){
+  return(items.length); 
 }
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr);
 }
+function enditem(){
+  return(items[items.length-1]);
+}
+//console.log(enditem(items));
+
+console.log(last(items,enditem));
+
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-}
+  return cb(x,y);
 
+}
+function addition(a,b){
+  return a+b;
+}
+console.log(sumNums(4,9,addition));
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x,y);
 }
-
+function multiply(a,b){
+  return a*b;
+}
+console.log(multiplyNums(10,3,multiply));
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  return cb(item,list);
 }
 
+function isfound(a,items){
+  for(i=0;i<items.length;i++){
+    if(items[i]===a) return 1;
+   
+  }
+}
+console.log(contains('Notebook',items,isfound));
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
