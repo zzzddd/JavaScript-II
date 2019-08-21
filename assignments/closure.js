@@ -3,10 +3,26 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
+function grandgrandpa() {
+  console.log("I m grand grand papa");
+
+  function grandpa() {
+    console.log("I m grand papa");
+    function papa() {
+      console.log("I m  papa");
+      function papason() {
+        console.log("I m  papa son");
+      }
+     papason();
+    }
+    papa(); 
+  }
+  grandpa();
+}
+grandgrandpa(); 
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
-
 
 // ==== Challenge 2: Implement a "counter maker" function ====
 const counterMaker = () => {
